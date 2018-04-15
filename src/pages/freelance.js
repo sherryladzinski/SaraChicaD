@@ -1,15 +1,11 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import styled from "styled-components"
+import ReactDOM from 'react-dom'
+import '../layouts/index.css'
 
 const Container = styled.div`
-  margin: 3rem auto;
-  margin-top: 0;
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+
 `;
 
 const ArticleWrapper = styled.div`
@@ -56,7 +52,7 @@ const Information = props => (
 );
 
 export default () => (
-  <Container>
+  <Container className="container">
     <Banner className="page-banner">
       <h1>Freelance Web Development</h1>
     </Banner>

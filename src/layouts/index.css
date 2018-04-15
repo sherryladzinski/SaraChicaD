@@ -640,9 +640,10 @@ pre tt:after {
 }
 
 .flip-container, .front, .back, .flipper {
-  min-width: 33.33vw;
-  height: calc(90vh/3);
-}
+    min-width: 33.3vw;
+    max-width: 100%;
+    height: calc(90vh/3);
+  }
 
 /* flip speed goes here */
 .flipper {
@@ -706,4 +707,31 @@ row {
 
 .page-banner h1 {
   padding-top: 100px;
+}
+
+  .container {
+    max-width: 600px;
+    margin: 3rem auto;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+@media only screen and (max-width: 600px) {
+  .flip-container, .front, .back, .flipper {
+    min-width: 100vw;
+    max-width: 100%;
+    height: calc(90vh/3);
+  }
+  .container {
+    max-width: 85%;
+    margin: 3rem auto;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }

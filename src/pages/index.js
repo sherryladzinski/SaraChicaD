@@ -5,18 +5,11 @@ import ReactDOM from 'react-dom'
 import '../layouts/index.css'
 
 const FlipSection = styled.div`
-  // margin: 3rem auto;
-  max-width: 100%;
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
-  // justify-content: center;
+
 `;
 
 const Container = styled.div`
-  // // display: flex;
-  // // align-items: center;
-  // // margin: 0 auto 12px auto;
+
 `;
 
 const Front = styled.div`
@@ -51,11 +44,11 @@ const Flipper = props => (
       >
         <span><CardName>{props.username}</CardName></span>
       </Front>
-      <Link to={props.link}>
+      <a href={props.link}>
         <Back className="back">
           <Excerpt>{props.back_text}</Excerpt>
         </Back>
-      </Link>
+      </a>
     </Card>
   </Container>
 );
@@ -74,7 +67,7 @@ export default () => (
         avatar="http://www.plupetstore.com/wp-content/uploads/1499/99595d7cd7c3b23.jpg"
         front_text="Twitter"
         back_text="Description text and link for Twitter card"
-        external_link="https://twitter.com/sarachicad"/>
+        link="https://twitter.com/sarachicad"/>
       <Flipper
         username="Freelance"
         avatar="https://www.pets4homes.co.uk/images/articles/3448/large/six-health-essentials-that-you-should-monitor-in-your-kittens-first-few-weeks-of-life-56a6114cb4003.jpg"
@@ -116,7 +109,7 @@ export default () => (
         avatar="https://i.pinimg.com/originals/2d/52/94/2d52942768bc5c1e2835b1e8b06924a2.jpg"
         front_text="Twitter"
         back_text="Description text and link for LinkedIn card"
-        external_link="/github/"/>
+        link="https://www.linkedin.com/in/sarainescalderon"/>
     </row>
   </FlipSection>
 );

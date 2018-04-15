@@ -623,6 +623,11 @@ pre tt:after {
   }
 }
 
+ .flip-section {
+  margin: 0 auto;
+  width: 100vw;
+ }
+
 /* entire container, keeps perspective */
 .flip-container {
   perspective: 1000px;
@@ -630,13 +635,13 @@ pre tt:after {
   float: left;
 }
   /* flip the pane when hovered */
-  .flip-container:hover .flipper, .flip-container.hover .flipper {
-    transform: rotateY(180deg);
-  }
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+  transform: rotateY(180deg);
+}
 
-.flip-container, .front, .back {
-  width: 200px;
-  height: 200px;
+.flip-container, .front, .back, .flipper {
+  min-width: 33.33vw;
+  height: calc(90vh/3);
 }
 
 /* flip speed goes here */
@@ -644,6 +649,14 @@ pre tt:after {
   transition: 0.6s;
   transform-style: preserve-3d;
   position: relative;
+  text-align: center;
+  color: white;
+}
+
+row {
+  display: inline-block;
+  max-width: 100%; /*change this later*/
+  margin: 0 auto;
 }
 
 /* hide back of pane during swap */
@@ -659,6 +672,17 @@ pre tt:after {
   z-index: 2;
   /* for firefox 31 */
   transform: rotateY(0deg);
+  background-size: cover;
+}
+
+.front span {
+  position: absolute;
+  bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.3)
 }
 
 /* back, initially hidden pane */
@@ -667,15 +691,19 @@ pre tt:after {
   background: #D0D0D0;
 }
 
- .flip-section {
+/* styling for description in back of card */
+.back p {
+  position: relative;
+  margin: 40px;
+}
 
- }
-
- .front {
+.page-banner {
+  width: 100vw;
+  text-align: center;
+  height: 250px;
   background-size: cover;
- }
+}
 
- row {
-  display: inline-block;
-  max-width: 600px; /*change this later*/
- }
+.page-banner h1 {
+  padding-top: 100px;
+}

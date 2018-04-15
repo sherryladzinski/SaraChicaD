@@ -6,7 +6,7 @@ import '../layouts/index.css'
 
 const FlipSection = styled.div`
   // margin: 3rem auto;
-  // max-width: 600px;
+  max-width: 100%;
   // display: flex;
   // flex-direction: column;
   // align-items: center;
@@ -31,12 +31,13 @@ const Card = styled.div`
 
 `;
 
-const CardName = styled.h2`
-
+const CardName = styled.p`
+  margin-bottom: 10px;
+  margin-top: 10px;
 `;
 
 const Excerpt = styled.p`
-  // margin: 0;
+  vertical-align: middle;
 `;
 
 const Flipper = props => (
@@ -44,47 +45,78 @@ const Flipper = props => (
     <Card className="flipper">
       <Front className="front"
         style={{
-          backgroundImage: `url(${props.avatar})`
+          backgroundImage: `url(${props.avatar})`,
+          backgroundPosition: 'center center',
         }}
       >
-        <CardName>{props.username}</CardName>
-        <Excerpt>{props.front_text}</Excerpt>
+        <span><CardName>{props.username}</CardName></span>
       </Front>
-      <Back className="back">
-        <Link to={props.link}>{props.back_text}</Link>
-      </Back>
+      <Link to={props.link}>
+        <Back className="back">
+          <Excerpt>{props.back_text}</Excerpt>
+        </Back>
+      </Link>
     </Card>
   </Container>
 );
 
 export default () => (
   <FlipSection className="flip-section">
-    <h1>Homepage</h1>
     <row>
       <Flipper
         username="Writing and Speaking"
-        avatar="https://s3.amazonaws.com/uifaces/faces/twitter/vladarbatov/128.jpg"
+        avatar="https://www.thehappycatsite.com/wp-content/uploads/2017/10/best-treats-for-kittens.jpg"
         front_text="Writing and Speaking"
-        back_text="this is the back text"
-        link="/github/"/>
+        back_text="Description text and link for Writing and Speaking card"
+        link="/writing-and-speaking/"/>
       <Flipper
         username="Twitter"
-        avatar="https://img.buzzfeed.com/buzzfeed-static/static/2017-01/31/16/asset/buzzfeed-prod-fastlane-01/sub-buzz-29032-1485899452-1.jpg"
+        avatar="http://www.plupetstore.com/wp-content/uploads/1499/99595d7cd7c3b23.jpg"
         front_text="Twitter"
-        back_text="this is the back text"
-        link="/github/"/>
+        back_text="Description text and link for Twitter card"
+        external_link="https://twitter.com/sarachicad"/>
       <Flipper
         username="Freelance"
-        avatar="https://img.buzzfeed.com/buzzfeed-static/static/2017-01/31/16/asset/buzzfeed-prod-fastlane-01/sub-buzz-29032-1485899452-1.jpg"
+        avatar="https://www.pets4homes.co.uk/images/articles/3448/large/six-health-essentials-that-you-should-monitor-in-your-kittens-first-few-weeks-of-life-56a6114cb4003.jpg"
         front_text="Twitter"
-        back_text="this is the back text"
+        back_text="Description text and link for Freelance card"
+        link="/freelance/"/>
+      <Flipper
+        username="Women Who Code"
+        avatar="https://wallpapersite.com/images/wallpapers/cute-kittens-2560x1440-adorable-hd-5655.jpg"
+        front_text="Twitter"
+        back_text="Description text and link for Women Who Code card"
+        link="/women-who-code/"/>
+      <Flipper
+        username="Github"
+        avatar="https://www.pets4homes.co.uk/images/articles/3715/large/dealing-with-fleas-on-young-kittens-57ec003b91a56.jpg"
+        front_text="Twitter"
+        back_text="Description text and link for Github card"
         link="/github/"/>
       <Flipper
-        username="WWC"
-        avatar="https://img.buzzfeed.com/buzzfeed-static/static/2017-01/31/16/asset/buzzfeed-prod-fastlane-01/sub-buzz-29032-1485899452-1.jpg"
+        username="Medium"
+        avatar="https://img-aws.ehowcdn.com/600x600p/photos.demandstudios.com/getty/article/56/147/83454811.jpg"
         front_text="Twitter"
-        back_text="this is the back text"
-        link="/github/"/>
+        back_text="Description text and link for Medium card"
+        link="/medium/"/>
+      <Flipper
+        username="About"
+        avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKpCfUzfgP9AwDH4wyRqKQcE_8HKNWBOfL6NpxayiismPIbPqLXw"
+        front_text="Twitter"
+        back_text="Description text and link for About card"
+        link="/about/"/>
+      <Flipper
+        username="Contact"
+        avatar="https://assets.vancouverisawesome.com/wp-content/uploads/2017/11/27140838/tiny-kittens.jpg"
+        front_text="Twitter"
+        back_text="Description text and link for Contact card"
+        link="/contact/"/>
+      <Flipper
+        username="LinkedIn"
+        avatar="https://i.pinimg.com/originals/2d/52/94/2d52942768bc5c1e2835b1e8b06924a2.jpg"
+        front_text="Twitter"
+        back_text="Description text and link for LinkedIn card"
+        external_link="/github/"/>
     </row>
   </FlipSection>
 );

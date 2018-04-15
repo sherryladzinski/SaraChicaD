@@ -626,6 +626,8 @@ pre tt:after {
 /* entire container, keeps perspective */
 .flip-container {
   perspective: 1000px;
+  position: relative;
+  float: left;
 }
   /* flip the pane when hovered */
   .flip-container:hover .flipper, .flip-container.hover .flipper {
@@ -641,14 +643,12 @@ pre tt:after {
 .flipper {
   transition: 0.6s;
   transform-style: preserve-3d;
-
   position: relative;
 }
 
 /* hide back of pane during swap */
 .front, .back {
   backface-visibility: hidden;
-
   position: absolute;
   top: 0;
   left: 0;
@@ -666,27 +666,16 @@ pre tt:after {
   transform: rotateY(180deg);
   background: #D0D0D0;
 }
- .flip-section p {
-  background-image: url('http://www.pravsworld.com/wp-content/uploads/2016/11/Puppy-Size-Love.jpg');
-  display: inline-block;
-  width: 33%;
-  height: stretch;
- }
-
- .flip-section ul {
-  display: inline-block !important;
-  width: 1000px;
- }
 
  .flip-section {
-  display: inline-block;
+
  }
 
  .front {
-  background-image: url('http://www.pravsworld.com/wp-content/uploads/2016/11/Puppy-Size-Love.jpg');
   background-size: cover;
  }
 
-.flip-section > span > div:nth-child(2) > div > div:first-child {
-    background-image: url('https://img.buzzfeed.com/buzzfeed-static/static/2017-01/31/16/asset/buzzfeed-prod-fastlane-01/sub-buzz-29032-1485899452-1.jpg');
+ row {
+  display: inline-block;
+  max-width: 600px; /*change this later*/
  }

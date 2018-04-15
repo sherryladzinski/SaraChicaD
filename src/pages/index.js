@@ -1,173 +1,90 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import styled from "styled-components"
 import ReactDOM from 'react-dom'
 import '../layouts/index.css'
 
-class MainPage extends React.Component {
-  render() {
-    return (
-      <div className="flip-section">
-        <h1>Welcome to my portfolio</h1>
+const FlipSection = styled.div`
+  // margin: 3rem auto;
+  // max-width: 600px;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // justify-content: center;
+`;
 
-        <span>
-        {/* First card */}
-        <div className="flip-container">
-          <div className="flipper">
-            <div className="front"
-               style={{
-               transform: 'rotateY(0deg)'
-             }}
-            >
-              Writing and Speaking
-            </div>
-            <div className="back">
-              <Link to="/writing-and-speaking/">Content for Writing and Speaking card</Link>
-            </div>
-          </div>
-        </div>
+const Container = styled.div`
+  // // display: flex;
+  // // align-items: center;
+  // // margin: 0 auto 12px auto;
+`;
 
-        {/* Second card */}
-        <div className="flip-container">
-          <div className="flipper">
-            <div className="front"
-               style={{
-               transform: 'rotateY(0deg)'
-             }}
-            >
-              Twitter
-            </div>
-            <div className="back">
-              <a href="https://twitter.com/sarachicad" target="_blank">Content for Twitter card</a>
-            </div>
-          </div>
-        </div>
+const Front = styled.div`
 
-        {/* Third card */}
-        <div className="flip-container">
-          <div className="flipper">
-            <div className="front"
-               style={{
-               transform: 'rotateY(0deg)'
-             }}
-            >
-              Freelance Software Development
-            </div>
-            <div className="back">
-              <Link to="/freelance/">Content for Freelance card</Link>
-            </div>
-          </div>
-        </div>
+`;
 
-        {/* Fourth card */}
-        <div className="flip-container">
-          <div className="flipper">
-            <div className="front"
-               style={{
-               transform: 'rotateY(0deg)'
-             }}
-            >
-              Women Who Code
-            </div>
-            <div className="back">
-              <Link to="/women-who-code/">Content for WWCode card</Link>
-            </div>
-          </div>
-        </div>
+const Back = styled.div`
 
-        {/* Fifth card */}
-        <div className="flip-container">
-          <div className="flipper">
-            <div className="front"
-               style={{
-               transform: 'rotateY(0deg)'
-             }}
-            >
-              Github
-            </div>
-            <div className="back">
-              <Link to="/github/">Content for Github card</Link>
-            </div>
-          </div>
-        </div>
+`;
 
-        {/* Sixth card */}
-        <div className="flip-container">
-          <div className="flipper">
-            <div className="front"
-               style={{
-               transform: 'rotateY(0deg)'
-             }}
-            >
-              Medium
-            </div>
-            <div className="back">
-              <Link to="/medium/">Content for Medium card</Link>
-            </div>
-          </div>
-        </div>
+const Card = styled.div`
 
-        {/* 7th card */}
-        <div className="flip-container">
-          <div className="flipper">
-            <div className="front"
-               style={{
-               transform: 'rotateY(0deg)'
-             }}
-            >
-              About
-            </div>
-            <div className="back">
-              <Link to="/about/">Content for About card</Link>
-            </div>
-          </div>
-        </div>
+`;
 
-        {/* 8th card */}
-        <div className="flip-container">
-          <div className="flipper">
-            <div className="front"
-               style={{
-               transform: 'rotateY(0deg)'
-             }}
-            >
-              Contact
-            </div>
-            <div className="back">
-              <Link to="/contact/">Content for Contact card</Link>
-            </div>
-          </div>
-        </div>
+const CardName = styled.h2`
 
-        {/* 9th card */}
-        <div className="flip-container">
-          <div className="flipper">
-            <div className="front"
-               style={{
-               transform: 'rotateY(0deg)'
-             }}
-            >
-              LinkedIn
-            </div>
-            <div className="back">
-              <a href="https://www.linkedin.com/in/sarainescalderon" target="_blank">Content for LinkedIn card</a>
-            </div>
-          </div>
-        </div>
+`;
 
-        </span>
+const Excerpt = styled.p`
+  // margin: 0;
+`;
 
+const Flipper = props => (
+  <Container className="flip-container">
+    <Card className="flipper">
+      <Front className="front"
+        style={{
+          backgroundImage: `url(${props.avatar})`
+        }}
+      >
+        <CardName>{props.username}</CardName>
+        <Excerpt>{props.front_text}</Excerpt>
+      </Front>
+      <Back className="back">
+        <Link to={props.link}>{props.back_text}</Link>
+      </Back>
+    </Card>
+  </Container>
+);
 
-        <ul>
-          <span>
-            <p>Instagram</p>
-            <p>WhatsApp</p>
-            <p>Oculus</p>
-          </span>
-        </ul>
-
-      </div>
-    );
-  }
-}
-
-export default MainPage
+export default () => (
+  <FlipSection className="flip-section">
+    <h1>Homepage</h1>
+    <row>
+      <Flipper
+        username="Writing and Speaking"
+        avatar="https://s3.amazonaws.com/uifaces/faces/twitter/vladarbatov/128.jpg"
+        front_text="Writing and Speaking"
+        back_text="this is the back text"
+        link="/github/"/>
+      <Flipper
+        username="Twitter"
+        avatar="https://img.buzzfeed.com/buzzfeed-static/static/2017-01/31/16/asset/buzzfeed-prod-fastlane-01/sub-buzz-29032-1485899452-1.jpg"
+        front_text="Twitter"
+        back_text="this is the back text"
+        link="/github/"/>
+      <Flipper
+        username="Freelance"
+        avatar="https://img.buzzfeed.com/buzzfeed-static/static/2017-01/31/16/asset/buzzfeed-prod-fastlane-01/sub-buzz-29032-1485899452-1.jpg"
+        front_text="Twitter"
+        back_text="this is the back text"
+        link="/github/"/>
+      <Flipper
+        username="WWC"
+        avatar="https://img.buzzfeed.com/buzzfeed-static/static/2017-01/31/16/asset/buzzfeed-prod-fastlane-01/sub-buzz-29032-1485899452-1.jpg"
+        front_text="Twitter"
+        back_text="this is the back text"
+        link="/github/"/>
+    </row>
+  </FlipSection>
+);
